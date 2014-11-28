@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="navbar">
+    <%= link_to "Hoarder", root_path %>
+    <hr>
+    <% if user_signed_in? %>
+      <%= current_user.username %>
+      <br>
+      <%= link_to "sign_out", sessions_path, method: "delete" %>
+    <% end %>
+  </div>
+  <hr>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

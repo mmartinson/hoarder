@@ -1,1 +1,22 @@
-h1 Auction Index
+.col-md-7
+  h3 All auctions
+  
+  - @auctions.each do |auction|
+    .well
+      h3 = link_to auction.item, auction_path(auction)
+      h4 = "Highest bid: #{auction.highest_bid}"
+      h4 = "Auction status: #{auction.aasm_state}"
+      h4 = "Auction ends at: #{auction.close_time}"
+
+.col-md-5
+  - if user_signed_in?
+    = link_to "Show me all my bids", bids_path, class: 'btn btn-default'
+    br
+    br
+  .well
+    = simple_form_for @auction do |f|
+      = f.input :item
+      = f.input :details
+      = f.input :reserve
+      = f.input :close_time
+      = f.submit

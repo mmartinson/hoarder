@@ -4,6 +4,7 @@ class AuctionsController < ApplicationController
 
   def index
     @auctions = Auction.all
+    @auction = Auction.new
   end
 
   def new

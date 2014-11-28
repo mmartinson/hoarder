@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :auctions, except: [:destroy] do
-    resources :bids, only: [:index, :create, :show]
+    resources :bids, only: [:create, :show]
   end
+
+  resources :bids, only: [:index]
 
   resources :users, only: [:create, :destroy]
 end
