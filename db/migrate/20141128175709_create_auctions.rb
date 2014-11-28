@@ -5,7 +5,7 @@ class CreateAuctions < ActiveRecord::Migration
       t.string :details
       t.datetime :close
       t.integer :reserve
-      t.resources :user
+      t.integer :user_id, index: true
 
       t.timestamps
     end
