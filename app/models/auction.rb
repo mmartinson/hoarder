@@ -18,4 +18,8 @@ class Auction < ActiveRecord::Base
     end 
   end
 
+  def highest_price
+    bids.order(price: :desc).first
+  end
+
 end
