@@ -1,0 +1,3 @@
+module UserAuthHelper
+
+end
