@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_username params[:username]
-    if user && user.authenticate params[:password]
+    if user && user.authenticate(params[:password])
       sign_in user
       redirect_to auctions_path, notice: "Welcome back #{user.username}"
     else
