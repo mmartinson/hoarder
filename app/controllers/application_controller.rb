@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def sign_in(user)
-  session[:user_id] = user.id
+    session[:user_id] = user.id
   end
 
   def user_signed_in?
@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   def authenticate_user! 
     unless user_signed_in?
       redirect_to new_session_path, alert: "Sign in before continuing"
+    end
   end
-
 end

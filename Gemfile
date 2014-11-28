@@ -30,6 +30,7 @@ gem 'twitter'
 gem "koala", "~> 1.10.0rc"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'rails_legit'
 
 
 group :test, :development do
