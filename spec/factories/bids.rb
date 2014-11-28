@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :bid do
-    user ""
-auction ""
-price 1
+    user nil
+    auction nil
+    sequence(:price) {|n| 10+n}
   end
 
 end
