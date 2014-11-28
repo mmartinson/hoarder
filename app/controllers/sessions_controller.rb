@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
-  def new; end
+  def new
+    #for combination sign-in sign-up page
+    @user = User.new
+  end
 
   def create
     user = User.find_by_username params[:username]
