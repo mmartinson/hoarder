@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :auction do
-    item "MyString"
-details "MyString"
-close "2014-11-28 09:57:09"
-reserve 1
-user ""
+  item "Corded Telephone"
+  details "A fine used electronic device"
+  close "5.days.from_now"
+  reserve 100
+  user ""
   end
 
 end
