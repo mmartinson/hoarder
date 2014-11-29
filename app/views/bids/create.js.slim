@@ -6,6 +6,7 @@
 - highest_bid_price = number_to_currency(@auction.highest_bid_price)
 - next_bid_price = number_to_currency(@auction.next_bid)
 - reserve_message = @auction.reserve_met? ? 'Auction reserve has been met' : 'Auction reserve has not yet been met'
+- auction_status = @auction.pending? ? "Reserve not met" : "Reserve Met"
 | var newBid = $('<div class=well>#{number_to_currency(@bid.price)} Made by #{@bid.created_by}</div>');
 
 
@@ -13,3 +14,4 @@
 | $('#highest-bid').html('Highest bid: #{highest_bid_price}');
 | $('#next-bid-price').html('Next bid price is #{next_bid_price}'); 
 | $('#reserve-met').html('#{reserve_message}');
+| $('#auction-status').html('#{auction_status}')

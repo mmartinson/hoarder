@@ -16,8 +16,8 @@ class AuctionsController < ApplicationController
     if @auction.save
       redirect_to auction_path(@auction)
     else
-      flash.now[:alert] = 'Try again'
-      render :new
+      flash[:alert] = 'Try again'
+      redirect_to auctions_path
     end
   end
 

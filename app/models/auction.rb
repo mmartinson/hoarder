@@ -31,7 +31,7 @@ class Auction < ActiveRecord::Base
   end
 
   def reverse_bids 
-    Bid.order(price: :desc)
+    bids.order(price: :desc)
   end
 
 end

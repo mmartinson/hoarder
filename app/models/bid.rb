@@ -14,7 +14,7 @@ class Bid < ActiveRecord::Base
   def update_auction_state
     if price >= auction.reserve && auction.pending?
       auction.clear_reserve!
-      retrun true
+      return true
     end
     false
   end

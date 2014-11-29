@@ -10,6 +10,9 @@
     br
     br
   .well
+    - # does it have an id?
+    -   # yes -> auction_path(@auction)
+    -   # no -> auctions_path
     = simple_form_for @auction do |f|
       = f.input :item
       = f.input :details
