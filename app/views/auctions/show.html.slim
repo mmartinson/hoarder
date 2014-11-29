@@ -3,19 +3,19 @@
   =render partial: "auction_display", locals: {auction: @auction, show: true}
 .col-md-6
   .enter-new-bids
-    h3#next_bid_price Next bid price is #{number_to_currency(@auction.next_bid)}
+    h3#next-bid-price Next bid price is #{number_to_currency(@auction.next_bid)}
     - if @auction.reserve_met?
       h3#reserve-met Auction reserve has been met
     -else
-      h3 Auction reserve has not yet been met
+      h3#reserve-met Auction reserve has not yet been met
     -unless @auction.user == current_user
       =link_to 'BID', auction_bids_path(@auction), remote: true, method: 'post', class: 'btn btn-xl btn-primary'
     -if @auction.user == current_user
       h3 This is your auction. You can't bid.
   br
-  - unless @auction.bids.empty?
+  - unless @auction.reverse_bids.empty?
     .bids
-      - @auction.bids.each do |bid|
+      - @auction.reverse_bids.each do |bid|
         .well
           = number_to_currency(bid.price)
           = " Made by #{bid.created_by}"

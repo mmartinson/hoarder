@@ -1,6 +1,6 @@
 .well
     h3 = show ?  auction.item : link_to(auction.item, auction_path(auction)) 
     / above line is a lazy style hack to reuse this partial
-    h4#highest-bid = "Highest bid: #{auction.highest_bid}"
+    h4#highest-bid = "Highest bid: #{number_to_currency(auction.highest_bid_price)}"
     h4#auction-status = "Auction status: #{auction.aasm_state}"
     h4 = "Auction ends at: #{auction.close_time}"

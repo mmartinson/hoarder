@@ -22,8 +22,16 @@ class Auction < ActiveRecord::Base
     bids.order(price: :desc).first
   end
 
+  def highest_bid_price
+    highest_bid.try(:price)
+  end
+
   def next_bid
     highest_bid ? 1 + highest_bid.price : 1
+  end
+
+  def reverse_bids 
+    Bid.order(price: :desc)
   end
 
 end
