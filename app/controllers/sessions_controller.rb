@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    redirect_to auctions_path if user_signed_in?
     #for combination sign-in sign-up page
     @user = User.new
   end
